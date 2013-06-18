@@ -26,5 +26,4 @@ class NewtonRootFinder(RootFinder):
 			if Math.Abs(dx) < xacc:
 				return x
 			iiter += 1
-		# L'algorithme a dépassé le nombre d'itérations autorisé
 		raise RootFinderException(m_InvalidRange, iiter, Range(x, x + dx), Math.Abs(dx))

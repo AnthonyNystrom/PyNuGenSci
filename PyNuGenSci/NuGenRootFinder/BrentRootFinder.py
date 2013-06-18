@@ -18,7 +18,7 @@ class BrentRootFinder(RootFinder):
 		fb = self.m_f(b)
 		fc = fb
 		xm = Double.NaN
-		# Vérifications d'usage
+
 		if m_xmin >= m_xmax or self.Sign(fa) == self.Sign(fb):
 			raise RootFinderException(m_InvalidRange, 0, Range(m_xmin, m_xmax), 0.0)
 		iiter = 0
@@ -54,25 +54,22 @@ class BrentRootFinder(RootFinder):
 				min1 = 3.0 * xm * q - Math.Abs(tol1 * q)
 				min2 = Math.Abs(e * q)
 				if 2.0 * p < Math.Min(min1, min2):
-					# On applique l'interpolation
+
 					e = d
 					d = p / q
 				else:
-					# L'interpolation a échoué; on applique la méthode de bisection
+
 					d = xm
 					e = d
 			else:
-				# La décroissance est trop lente, on applique la méthode de bisection
+
 				d = xm
 				e = d
 			a = b
 			fa = fb
 			b += (d if Math.Abs(d) > tol1 else tol1 * self.Sign(xm))
-			#
-			# if(Math.Abs(d)>tol1) b+=d;
-			# else b+=sign(tol1,xm);
-			#
+
 			fb = self.m_f(b)
 			iiter += 1
-		# L'algorithme a dépassé le nombre d'itérations autorisé
+
 		raise RootFinderException(m_AccuracyNotReached, iiter, Range(a, b), Math.Abs(xm))

@@ -11,7 +11,7 @@ class RidderRootFinder(RootFinder):
 	def Find(self):
 		# Vérifications d'usage
 		if m_xmin >= m_xmax:
-			raise RootFinderException(m_InvalidRange, 0, Range(m_xmin, m_xmax), 0.0) # Mauvaise plage de recherche
+			raise RootFinderException(m_InvalidRange, 0, Range(m_xmin, m_xmax), 0.0)
 		ans = -1.11e30
 		xh = m_xmax
 		xl = m_xmin
@@ -51,7 +51,7 @@ class RidderRootFinder(RootFinder):
 					return (ans)
 				iiter += 1
 			raise RootFinderException(m_AccuracyNotReached, iiter, Range(m_xmin, m_xmax), Math.Abs(xh - xl))
-		else: # nombre d'itérations autorisé dépassé
+		else:
 			if fl == 0.0:
 				return (m_xmin)
 			if fh == 0.0:

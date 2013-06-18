@@ -26,5 +26,5 @@ class BisectionRootFinder(RootFinder):
 				x = xmid
 			if Math.Abs(dx) < m_Accuracy or fmid == 0.0:
 				return (x)
-		# L'algorithme a dépassé le nombre d'itérations autorisé
+
 		raise RootFinderException(m_AccuracyNotReached, iiter, Range(Math.Min(xmid, x), Math.Max(xmid, x)), Math.Abs(dx))
