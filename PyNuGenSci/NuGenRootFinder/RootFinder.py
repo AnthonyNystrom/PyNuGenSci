@@ -1,7 +1,7 @@
 ﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from System import *
+from sys import *
 
 class RootFinder(object):
 	def __init__(self, f, niter, acc):
@@ -83,7 +83,6 @@ class RootFinder(object):
 				fmax = self.m_f(xmax += factor * (xmax - xmin))
 		raise RootFinderException(self._m_RootNotFound, iiter, Range(fmin, fmax), 0.0)
 
-	# Algorithmes de résolution
 	def Solve(self, x1, x2, bracket):
 		""" <summary>Prototype algorithm for solving the equation f(x)=0.</summary>
 		 <param name="x1">The low value of the range where the root is supposed to be.</param>

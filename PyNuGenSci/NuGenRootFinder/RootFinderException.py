@@ -1,9 +1,7 @@
 ﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from System import *
-from System.Collections.Generic import *
-from System.Text import *
+from sys import *
 
 class Range(object):
 	def __init__(self, min, max):

@@ -1,7 +1,7 @@
 ﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from System import *
+from sys import *
 
 class BrentRootFinder(RootFinder):
 	def __init__(self, f, niter, pres):

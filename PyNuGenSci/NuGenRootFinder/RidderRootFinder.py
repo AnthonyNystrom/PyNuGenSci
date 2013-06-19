@@ -1,7 +1,7 @@
 ﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from System import *
+from sys import *
 
 class RidderRootFinder(RootFinder):
 	def __init__(self, f, niter, pres):
@@ -9,7 +9,7 @@ class RidderRootFinder(RootFinder):
 	def __init__(self, f, niter, pres):
 		pass
 	def Find(self):
-		# Vérifications d'usage
+
 		if m_xmin >= m_xmax:
 			raise RootFinderException(m_InvalidRange, 0, Range(m_xmin, m_xmax), 0.0)
 		ans = -1.11e30
